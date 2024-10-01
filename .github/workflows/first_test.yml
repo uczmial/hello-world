@@ -41,4 +41,4 @@ jobs:
           echo test, and deploy your project.
           echo pwd
           pwd
-          echo ${{vars.APP_HOSTNAME}}
+          echo APP_HOSTNAME = ${{vars.APP_HOSTNAME}}
