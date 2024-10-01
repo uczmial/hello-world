@@ -41,3 +41,4 @@ jobs:
           echo test, and deploy your project.
           echo pwd
           pwd
+          echo ${{vars.APP_HOSTNAME}}
