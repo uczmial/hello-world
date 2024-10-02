@@ -39,7 +39,7 @@ jobs:
 
       - name: Get run filesystem
         run: |
-          ucl_top=$(ssh ${{vars.APP_LOGIN}}@${{vars.APP_HOSTNAME}} "ksh -lc env | grep UCL_TOP| cut -d '=' -f 2")
+          ucl_top=$(ssh -i /home/appdev/ian/.ssh/my_ssh_key ${{vars.APP_LOGIN}}@${{vars.APP_HOSTNAME}} "ksh -lc env | grep UCL_TOP| cut -d '=' -f 2")
           echo "Found UCL_TOP filesystem ${ucl_top}"
           echo "UCL_TOP=${ucl_top}" >> $GITHUB_ENV
           xxsim_top=$(ssh ${{vars.APP_LOGIN}}@${{vars.APP_HOSTNAME}} "ksh -lc env | grep XXSIM_TOP| cut -d '=' -f 2")
