@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: EBS_Connection_Test
 
 # Controls when the workflow will run
 on:
@@ -36,6 +36,7 @@ jobs:
           touch ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
           ssh-keyscan ${{vars.APP_HOSTNAME}} >> ~/.ssh/known_hosts
+          echo APP_HOSTNAME = ${{vars.APP_HOSTNAME}}
 
       - name: Get run filesystem
         run: |
@@ -62,4 +63,3 @@ jobs:
           echo test, and deploy your project.
           echo pwd
           pwd
-          echo APP_HOSTNAME = ${{vars.APP_HOSTNAME}}
